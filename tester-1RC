@@ -1,0 +1,37 @@
+package org.sel.out;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SeleniumDay {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		System.setProperty("webdriver.chrome.driver","/Users/richardcolins/eclipse-workspace/SeleniumStart/Driverexe/chromedriver2");
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://www.google.com/");
+		
+		String title = driver.getTitle();
+		
+		System.out.println(title);
+		
+		
+		String url = driver.getCurrentUrl();
+		
+		System.out.println(url);
+		
+		WebElement login = driver.findElement(By.name("q"));
+		
+		login.click();
+		
+		Thread.sleep(3000);
+		
+		driver.quit();
+	}
+}
